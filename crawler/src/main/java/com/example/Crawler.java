@@ -25,7 +25,10 @@ public class Crawler {
     public void start() {
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
             if (System.in.available() == 0) {
-                System.err.println("No URLs detected. Hint: cat urls.txt | java Crawler");
+                System.err.println("No URLs detected. Hint:\n" + "For Windows: \n" +
+                        "Get-Content urls.txt | java -jar target/Crawler-1.0.jar\n"
+                + "For Linux (many links): \n" + "cat urls.txt | java -jar ./target/Crawler-1.0.jar\n" + "For Linux (single link): \n"
+                + "echo link-here | java -jar ./target/Crawler-1.0.jar");
                 System.exit(1);
 
             }
